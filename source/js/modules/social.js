@@ -5,5 +5,9 @@ export default () => {
   });
   socialBlock.addEventListener(`mouseleave`, function () {
     socialBlock.classList.remove(`social-block--active`);
+    socialBlock.classList.add(`social-block--fade`);
+    setTimeout(() => {
+      socialBlock.classList.remove(`social-block--fade`);
+    }, 100);
   });
 };
