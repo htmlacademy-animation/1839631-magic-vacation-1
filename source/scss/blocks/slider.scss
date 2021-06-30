@@ -96,6 +96,10 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  opacity: 0;
+  transition: opacity, transform;
+  transition-duration: 0.4s;
+  transition-delay: 0.3s;
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
@@ -123,6 +127,24 @@
     font-size: 1.4rem;
     line-height: 1.5rem;
   }
+
+  .swiper-slide.swiper-slide-active & {
+    opacity: 1;
+    transform: translateX(-15px);
+
+  }
+
+  .swiper-slide.swiper-slide-next & {
+    opacity: 1;
+    transform: translateX(-15px);
+    transition-property: opacity, transform;
+    transition-delay: 0.5s;
+  }
+
+  // .swiper-slide.swiper-slide-active &:first-child {
+  //   transition-property: opacity, transform;
+  //   transition-delay: 0.2s
+  // }
 }
 
 .slider__controls {

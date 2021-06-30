@@ -17,6 +17,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: color 0.4s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -35,6 +36,11 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: transform 0.5s;
+  }
+
+  &:hover::before {
+    transform: translate(-50%, -50%) scale(1.2);
   }
 
   svg {
@@ -48,10 +54,10 @@
   .social-block--active & {
     color: $c-purple;
 
-    &::before {
-      width: 112.5%;
-      height: 112.5%;
-    }
+    // &::before {
+    //   width: 112.5%;
+    //   height: 112.5%;
+    // }
   }
 
   &:focus {
@@ -65,6 +71,10 @@
     & + .social-block__list {
       opacity: 1;
       pointer-events: auto;
+
+      .social-block__link {
+        opacity: 1;
+      }
     }
   }
 
@@ -89,6 +99,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.4s;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -142,6 +153,10 @@
     pointer-events: auto;
   }
 
+  .social-block--fade & {
+    opacity: 1;
+  }
+
   li {
     flex: none;
     margin-bottom: 0.5rem;
@@ -168,6 +183,8 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s, transform 1s;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -200,6 +217,28 @@
     color: $c-purple;
     background-color: $c-light;
     border-color: $c-light;
+  }
+
+  .social-block.social-block--active & {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+
+  .social-block.social-block--fade & {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+
+  .social-block.social-block--active &--fb {
+    transition: transform 0.4s, opacity 0.4s, color 0.3s;
+  }
+
+  .social-block.social-block--active &--insta {
+    transition: transform 0.4s 0.1s, opacity 0.4s 0.1s, color 0.3s;
+  }
+
+  .social-block.social-block--active &--vk {
+    transition: transform 0.4s 0.2s, opacity 0.4s 0.2s, color 0.3s;
   }
 
   svg {
