@@ -130,7 +130,7 @@
 
   .swiper-slide.swiper-slide-active & {
     opacity: 1;
-    transform: translateX(-15px);
+    transform: translateX(-1rem);
 
   }
 
@@ -140,11 +140,6 @@
     transition-property: opacity, transform;
     transition-delay: 0.5s;
   }
-
-  // .swiper-slide.swiper-slide-active &:first-child {
-  //   transition-property: opacity, transform;
-  //   transition-delay: 0.2s
-  // }
 }
 
 .slider__controls {
