@@ -1,3 +1,5 @@
+@import "../general/timingFunctions.scss";
+
 .page-header {
   position: fixed;
   top: 0;
@@ -40,7 +42,7 @@
   transition-property: opacity, transform;
   transition-duration: 0.5s;
   transition-delay: 0.1s;
-  transition-timing-function: cubic-bezier(.6,.89,.34,.96);
+  transition-timing-function: $afterLoadingTimingFunction;
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -96,7 +98,7 @@
   transition-property: transform;
   transition-duration: 0.3s;
   transition-delay: 0.3s;
-  transition-timing-function: cubic-bezier(.5,.92,.5,1.28);
+  transition-timing-function: $togglerTimingFunction;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: block;
@@ -198,7 +200,7 @@
   line-height: 1.0418;
   color: $c-light;
   opacity: 0;
-  transition: opacity 0.5s 0.3s cubic-bezier(.6,.89,.34,.96);
+  transition: opacity 0.5s $afterLoadingTimingFunction 0.3s;
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;

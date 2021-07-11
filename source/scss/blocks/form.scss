@@ -34,8 +34,9 @@
   flex: none;
   margin-right: 3rem;
   padding: 0 5.6rem;
+  width: calc(100% - 21rem);
+  transform: scaleX(0);
   height: 6rem;
-  width: 0;
   text-transform: uppercase;
   font: inherit;
   font-size: 2.4rem;
@@ -44,58 +45,63 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
-  transition: width 0.4s;
+  transition: transform 0.5s;
 
   &:focus {
     border: 1px solid $c-purple;
   }
 
   .screen--game.active & {
-    width: calc(100% - 21rem);
+    transform: scaleX(1);
+    transform-origin: right;
   }
 
   @media (min-width: $stop-scaling) {
     margin-right: 30px;
     padding: 0 56px;
+    width: calc(100% - 210px);
     height: 60px;
-    width: 0;
     font-size: 24px;
     border-radius: 30px;
 
     .screen--game.active & {
-      width: calc(100% - 210px);
+      transform: scaleX(1);
+      transform-origin: right;
     }
   }
 
   @media (orientation: portrait) {
     margin-right: 1rem;
     padding: 0 2.5rem;
-    width: 0;
+    width: calc(100% - 5rem);
     height: 4rem;
     font-size: 1.6rem;
 
     .screen--game.active & {
-      width: calc(100% - 5rem);
+      transform: scaleX(1);
+      transform-origin: right;
     }
   }
 
   @media (max-width: $tablet) and (orientation: landscape) {
-    width: 0;
+    width: calc(100% - 9rem);
 
     .screen--game.active & {
-      width: calc(100% - 9rem);
+      transform: scaleX(1);
+      transform-origin: right;
     }
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
     margin-right: 1rem;
     padding: 0 2.5rem;
-    width: 0;
+    width: calc(100% - 5rem);
     height: 4rem;
     font-size: 1.6rem;
 
     .screen--game.active & {
-      width: calc(100% - 5rem);
+      transform: scaleX(1);
+      transform-origin: right;
     }
   }
 }
